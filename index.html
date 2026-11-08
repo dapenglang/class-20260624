@@ -196,6 +196,9 @@
     transition:transform .18s ease;
   }
   .member:hover{transform:translateY(-3px)}
+  .member .ava-link{display:block;width:max-content;margin:0 auto}
+  .member a.nm{border-bottom:1px dashed transparent}
+  .member a.nm:hover{color:var(--navy);border-bottom-color:currentColor}
   .member .ava{
     display:block;margin:0 auto 9px;
     width:58px;height:58px;border-radius:50%;
@@ -675,9 +678,9 @@
       var user = String(m.github || '').trim().replace(/^@/, '').replace(/^https?:\/\/(www\.)?github\.com\//i, '').replace(/\/.*$/, '');
 
       var a = document.createElement('a');
-      a.className = 'member t' + tier;
+      a.className = 'ava-link';
       a.href = 'member.html?id=' + encodeURIComponent(m.id);
-      a.title = m.name + ' · ' + m.role + (m.duty ? ' · ' + m.duty : '') + (user ? '（GitHub: ' + user + '）' : '');
+      a.title = m.name + ' · ' + m.role + (m.duty ? ' · ' + m.duty : '') + ' · 查看个人主页';
 
       var img = document.createElement('img');
       img.className = 'ava';
@@ -686,20 +689,32 @@
       img.src = user ? 'https://github.com/' + encodeURIComponent(user) + '.png?size=200' : fallback;
       img.onerror = function(){ this.onerror = null; this.src = fallback; };
 
-      var nm = document.createElement('span');
+      var nm, wrap = document.createElement('div');
+      wrap.className = 'member t' + tier;
+      if (user){
+        nm = document.createElement('a');
+        nm.href = 'https://github.com/' + encodeURIComponent(user);
+        nm.target = '_blank';
+        nm.rel = 'noopener';
+        nm.title = '打开 ' + user + ' 的 GitHub 主页';
+      } else {
+        nm = document.createElement('span');
+        nm.title = m.name + ' · 尚未绑定 GitHub';
+      }
       nm.className = 'nm';
       nm.textContent = m.name;
 
       a.appendChild(img);
-      a.appendChild(nm);
+      wrap.appendChild(a);
+      wrap.appendChild(nm);
 
       if (tier < 3){
         var rl = document.createElement('span');
         rl.className = 'rl';
         rl.textContent = m.role;
-        a.appendChild(rl);
+        wrap.appendChild(rl);
       }
-      box.appendChild(a);
+      box.appendChild(wrap);
     });
   }).catch(function(){
     box.innerHTML = '<div class="cloud-loading">成员数据加载失败，请刷新重试。</div>';
