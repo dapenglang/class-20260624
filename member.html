@@ -90,6 +90,8 @@
       <div id="ghbox"><span class="duty empty">尚未绑定</span></div>
     </div>
 
+    <div id="emailbox"></div>
+
     <div class="actions">
       <a class="btn primary" id="edit" href="#" target="_blank" rel="noopener">用 GitHub 登录并编辑我的信息</a>
       <a class="btn" href="index.html#members">看看其他同学</a>
@@ -155,6 +157,11 @@
       document.getElementById('ghbox').innerHTML =
         '<a class="gh" href="' + u + '" target="_blank" rel="noopener">github.com/' +
         u.replace(/^https?:\/\/github\.com\//,'').replace(/\/$/,'') + ' ↗</a>';
+    }
+    if (m.email) {
+      var eb = document.getElementById('emailbox');
+      eb.innerHTML = '<div class="sect"><h2>联系邮箱</h2>'
+        + '<a class="gh" href="mailto:' + m.email + '">' + m.email + ' ↗</a></div>';
     }
   });
 })();
