@@ -277,6 +277,13 @@
   }
   .comp-item .more{display:block;margin-top:16px;font-size:12.5px;color:var(--navy)}
 
+  /* ---------- people link ---------- */
+  a.who{
+    color:inherit;border-bottom:1px dashed rgba(2,77,159,.45);
+    transition:color .18s ease,border-color .18s ease;
+  }
+  a.who:hover{color:var(--navy);border-bottom-color:var(--navy)}
+
   /* ---------- competition modal ---------- */
   .cm-modal{position:fixed;inset:0;z-index:120;display:none}
   .cm-modal.open{display:block}
@@ -654,6 +661,7 @@
   }
 
   fetch('data/members.json?v=' + Date.now()).then(function(r){ return r.json(); }).then(function(list){
+    list = list.filter(function(m){ return !m.guest; });
     list.sort(function(a, b){
       var ta = T1[a.role] ? 1 : (T2[a.role] ? 2 : 3);
       var tb = T1[b.role] ? 1 : (T2[b.role] ? 2 : 3);
@@ -731,6 +739,7 @@
         + (links ? '<div class="n-links">' + links + '</div>' : '')
         + '</article>';
     }).join('');
+    if (window.linkPeople) window.linkPeople(box);
   }).catch(function(){
     box.innerHTML = '<div class="notice-empty">通知加载失败，请刷新重试。</div>';
   });
@@ -777,6 +786,7 @@
   function open(item){
     lastFocus = document.activeElement;
     body.innerHTML = html(item);
+    if (window.linkPeople) window.linkPeople(body);
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
@@ -820,6 +830,58 @@
   document.addEventListener('keydown', function(e){
     if (e.key === 'Escape' && modal.classList.contains('open')) close();
   });
+})();
+</script>
+
+<script>
+(function(){
+  var people = null;
+
+  function esc(s){
+    return String(s).replace(/[&<>"]/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];
+    });
+  }
+
+  window.linkPeople = function(root){
+    if (!people || !people.length || !root) return;
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+    var nodes = [], n;
+    while ((n = walker.nextNode())){
+      var p = n.parentNode;
+      if (!p || !n.nodeValue || !n.nodeValue.trim()) continue;
+      var tag = p.nodeName;
+      if (tag === 'A' || tag === 'SCRIPT' || tag === 'STYLE') continue;
+      if (p.closest && (p.closest('a') || p.closest('.member') || p.closest('.cloud'))) continue;
+      nodes.push(n);
+    }
+    nodes.forEach(function(node){
+      var html = esc(node.nodeValue), hit = false;
+      people.forEach(function(person){
+        if (html.indexOf(person.name) > -1){
+          hit = true;
+          html = html.split(person.name).join(
+            '<a class="who" href="member.html?id=' + encodeURIComponent(person.id) + '">' + esc(person.name) + '</a>'
+          );
+        }
+      });
+      if (!hit) return;
+      var span = document.createElement('span');
+      span.innerHTML = html;
+      node.parentNode.replaceChild(span, node);
+    });
+  };
+
+  fetch('data/members.json?v=' + Date.now())
+    .then(function(r){ return r.json(); })
+    .then(function(list){
+      people = list.filter(function(m){ return m.name; })
+        .map(function(m){ return { name: m.name, id: m.id }; })
+        .sort(function(a, b){ return b.name.length - a.name.length; });
+      window.linkPeople(document.body);
+      setTimeout(function(){ window.linkPeople(document.body); }, 900);
+    })
+    .catch(function(){});
 })();
 </script>
 

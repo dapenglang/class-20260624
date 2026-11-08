@@ -286,5 +286,14 @@
   "duty": "",
   "github": "",
   "origin": "新疆"
+ },
+ {
+  "id": "m00",
+  "name": "陈自旺",
+  "role": "主讲教师",
+  "duty": "水声工程学院 · 班级讲座主讲",
+  "github": "",
+  "origin": "",
+  "guest": true
  }
 ]
