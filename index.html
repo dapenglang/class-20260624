@@ -271,6 +271,38 @@
   }
   .comp-item h4{font-size:16px;margin-bottom:10px;font-weight:600}
   .comp-item p{font-size:13.5px;color:var(--ink-3);line-height:1.7}
+  .comp-item{cursor:pointer;transition:border-color .18s ease,background .18s ease,transform .18s ease}
+  .comp-item:hover,.comp-item:focus-visible{
+    border-color:rgba(2,77,159,.38);background:#FFFDF8;transform:translateY(-2px);outline:none;
+  }
+  .comp-item .more{display:block;margin-top:16px;font-size:12.5px;color:var(--navy)}
+
+  /* ---------- competition modal ---------- */
+  .cm-modal{position:fixed;inset:0;z-index:120;display:none}
+  .cm-modal.open{display:block}
+  .cm-mask{position:absolute;inset:0;background:rgba(14,23,38,.52)}
+  .cm-card{
+    position:relative;max-width:740px;margin:6vh auto;background:#fff;
+    max-height:86vh;overflow:auto;padding:36px 40px 32px;
+    box-shadow:0 24px 60px rgba(14,23,38,.18);
+  }
+  .cm-x{
+    position:absolute;top:12px;right:16px;border:0;background:none;
+    font-size:24px;line-height:1;color:var(--ink-3);cursor:pointer;padding:4px 8px;
+  }
+  .cm-x:hover{color:var(--navy)}
+  .cm-meta{font-size:12px;letter-spacing:.18em;color:var(--warm);font-weight:600}
+  .cm-card h3{font-family:var(--serif);font-size:26px;margin:10px 0 12px;line-height:1.35}
+  .cm-lead{font-size:14.5px;color:var(--ink-2);margin-bottom:6px}
+  .cm-sec{border-top:1px solid var(--line);padding-top:18px;margin-top:20px}
+  .cm-sec h4{font-size:13px;letter-spacing:.1em;color:var(--navy);margin-bottom:12px}
+  .cm-sec h5{font-size:13.5px;color:var(--ink);margin:14px 0 6px;font-weight:600}
+  .cm-sec ul,.cm-sec ol{margin-left:20px}
+  .cm-sec li{font-size:13.8px;color:var(--ink-2);line-height:1.8;margin-bottom:4px}
+  .cm-note{
+    margin-top:20px;padding-top:14px;border-top:1px dashed var(--line);
+    font-size:12.5px;color:var(--ink-3);
+  }
 
   /* ---------- footer ---------- */
   footer{padding:56px 0;background:#0E1726;color:#8C97A8;font-size:13.5px}
@@ -341,7 +373,7 @@
     <h1>以勤学立身，<br>以笃行致远。</h1>
     <p class="lede">
       20260624 班成立于 <strong>2026 年 9 月</strong>，共 <strong>34 名同学</strong>，
-      来自全国 8 个省、自治区、直辖市。四年一程，我们把每一次班会、每一场讲座、
+      来自全国 9 个省、自治区、直辖市。四年一程，我们把每一次班会、每一场讲座、
       每一项赛事都记录下来，让成长有迹可循。
     </p>
     <div class="stats">
@@ -476,25 +508,29 @@
       班级知识库中已整理完整名录与大一参赛指南，以下为四个常用入口的说明。
     </p>
     <div class="comp">
-      <div class="comp-item">
+      <div class="comp-item" data-key="level1" tabindex="0" role="button">
         <div class="n">60</div>
         <h4>I 级竞赛清单</h4>
         <p>学校认定级别最高的赛事，含主办单位与牵头学院，竞赛加分与保研认定以此为准。</p>
+        <span class="more">查看清单与建议</span>
       </div>
-      <div class="comp-item">
+      <div class="comp-item" data-key="level23" tabindex="0" role="button">
         <div class="n">139</div>
         <h4>II 级与 III 级竞赛清单</h4>
         <p>覆盖面更广的赛事名录，适合有兴趣拓展方向、积累经验的同学选择参赛。</p>
+        <span class="more">查看清单与建议</span>
       </div>
-      <div class="comp-item">
+      <div class="comp-item" data-key="cs10" tabindex="0" role="button">
         <div class="n">10</div>
         <h4>计算机类专业相关竞赛</h4>
         <p>算法编程、AI 开发、机器人、学科打底四类，含十项重点赛事的报名时间与备考路线。</p>
+        <span class="more">查看清单与建议</span>
       </div>
-      <div class="comp-item">
+      <div class="comp-item" data-key="guide12" tabindex="0" role="button">
         <div class="n">12</div>
         <h4>大一新生参赛指南</h4>
         <p>参赛友好度分级、全年参赛日历与费用速查表，回答"大一能不能报、什么时候报"。</p>
+        <span class="more">查看清单与建议</span>
       </div>
     </div>
   </div>
@@ -697,6 +733,92 @@
     }).join('');
   }).catch(function(){
     box.innerHTML = '<div class="notice-empty">通知加载失败，请刷新重试。</div>';
+  });
+})();
+</script>
+
+<div id="cm-modal" class="cm-modal" aria-hidden="true">
+  <div class="cm-mask" data-close></div>
+  <div class="cm-card" role="dialog" aria-modal="true" aria-labelledby="cm-title">
+    <button class="cm-x" data-close aria-label="关闭">×</button>
+    <div id="cm-body"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var modal = document.getElementById('cm-modal');
+  if (!modal) return;
+  var body = document.getElementById('cm-body');
+  var cards = [].slice.call(document.querySelectorAll('.comp-item[data-key]'));
+  var map = {}, lastFocus = null;
+
+  function esc(s){
+    return String(s).replace(/[&<>"]/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];
+    });
+  }
+
+  function html(item){
+    var groups = (item.groups || []).map(function(g){
+      return '<h5>' + esc(g.h) + '</h5><ul>'
+        + (g.list || []).map(function(t){ return '<li>' + esc(t) + '</li>'; }).join('')
+        + '</ul>';
+    }).join('');
+    var advice = (item.advice || []).map(function(t){ return '<li>' + esc(t) + '</li>'; }).join('');
+    return '<div class="cm-meta">竞赛导航</div>'
+      + '<h3 id="cm-title">' + esc(item.title) + '</h3>'
+      + '<p class="cm-lead">' + esc(item.summary) + '</p>'
+      + (groups ? '<div class="cm-sec"><h4>清单一览</h4>' + groups + '</div>' : '')
+      + (advice ? '<div class="cm-sec"><h4>备赛建议</h4><ol>' + advice + '</ol></div>' : '')
+      + (item.note ? '<p class="cm-note">' + esc(item.note) + '</p>' : '');
+  }
+
+  function open(item){
+    lastFocus = document.activeElement;
+    body.innerHTML = html(item);
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    var x = modal.querySelector('.cm-x');
+    if (x) x.focus();
+  }
+
+  function close(){
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  fetch('data/competitions.json?v=' + Date.now())
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      (d.items || []).forEach(function(it){ map[it.key] = it; });
+    })
+    .catch(function(){
+      cards.forEach(function(c){
+        c.querySelector('.more').textContent = '内容加载失败，请刷新重试';
+      });
+    });
+
+  cards.forEach(function(card){
+    function go(){
+      var it = map[card.getAttribute('data-key')];
+      if (it) open(it);
+    }
+    card.addEventListener('click', go);
+    card.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); }
+    });
+  });
+
+  modal.addEventListener('click', function(e){
+    if (e.target.hasAttribute('data-close')) close();
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && modal.classList.contains('open')) close();
   });
 })();
 </script>
