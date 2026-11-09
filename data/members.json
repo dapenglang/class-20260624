@@ -2,6 +2,7 @@
  {
   "id": "m01",
   "name": "郎大鹏",
+  "nick": "dapenglang",
   "role": "班主任",
   "duty": "全面指导 · 审核 · 对外联络",
   "github": "dapenglang",
@@ -10,6 +11,7 @@
  {
   "id": "m02",
   "name": "刘璟仪",
+  "nick": "LJY",
   "role": "辅导员",
   "duty": "思想引领 · 日常管理",
   "github": "",
@@ -18,24 +20,27 @@
  {
   "id": "m03",
   "name": "李鹏宇",
+  "nick": "li2630",
   "role": "同学",
   "duty": "",
-  "github": "",
+  "github": "li2630",
   "origin": "山东",
   "email": "1261501626@qq.com"
  },
  {
   "id": "m04",
   "name": "赵一琛",
+  "nick": "FROZEN114514",
   "role": "同学",
   "duty": "",
-  "github": "",
+  "github": "FROZEN114514",
   "origin": "山东",
   "email": "z2_mikoto@outlook.com"
  },
  {
   "id": "m05",
   "name": "徐文泽",
+  "nick": "同学01",
   "role": "同学",
   "duty": "",
   "github": "",
@@ -45,6 +50,7 @@
  {
   "id": "m06",
   "name": "于卫振",
+  "nick": "同学02",
   "role": "同学",
   "duty": "",
   "github": "",
@@ -53,15 +59,17 @@
  {
   "id": "m07",
   "name": "王成坤",
+  "nick": "wangchengkun0204",
   "role": "同学",
   "duty": "",
-  "github": "",
+  "github": "wangchengkun0204",
   "origin": "山东",
   "email": "wangchengkun0204@outlook.com"
  },
  {
   "id": "m08",
   "name": "于翔帆",
+  "nick": "同学03",
   "role": "同学",
   "duty": "",
   "github": "",
@@ -70,6 +78,7 @@
  {
   "id": "m09",
   "name": "张传儒",
+  "nick": "同学04",
   "role": "同学",
   "duty": "",
   "github": "",
@@ -79,6 +88,7 @@
  {
   "id": "m10",
   "name": "王喆",
+  "nick": "同学05",
   "role": "同学",
   "duty": "",
   "github": "",
@@ -87,6 +97,7 @@
  {
   "id": "m11",
   "name": "周吉泉",
+  "nick": "同学06",
   "role": "同学",
   "duty": "",
   "github": "",
@@ -95,14 +106,16 @@
  {
   "id": "m12",
   "name": "李昕益",
+  "nick": "jsgjyr",
   "role": "同学",
   "duty": "",
-  "github": "",
+  "github": "jsgjyr",
   "origin": "浙江"
  },
  {
   "id": "m13",
   "name": "曲家齐",
+  "nick": "同学07",
   "role": "同学",
   "duty": "",
   "github": "",
@@ -111,14 +124,17 @@
  {
   "id": "m14",
   "name": "曹桂宁",
+  "nick": "同学08",
   "role": "同学",
   "duty": "",
   "github": "",
-  "origin": "辽宁"
+  "origin": "辽宁",
+  "email": "lovesytwozls1@outlook.com"
  },
  {
   "id": "m15",
   "name": "孙雨鑫",
+  "nick": "同学09",
   "role": "同学",
   "duty": "",
   "github": "",
@@ -127,6 +143,7 @@
  {
   "id": "m16",
   "name": "何雨泽",
+  "nick": "同学10",
   "role": "学习委员",
   "duty": "学风建设 · 成绩统计 · 竞赛信息",
   "github": "",
@@ -135,6 +152,7 @@
  {
   "id": "m17",
   "name": "相一航",
+  "nick": "同学11",
   "role": "同学",
   "duty": "",
   "github": "",
@@ -144,15 +162,17 @@
  {
   "id": "m18",
   "name": "闫心宇",
+  "nick": "WDLXZDSJQ",
   "role": "同学",
   "duty": "",
-  "github": "",
+  "github": "WDLXZDSJQ",
   "origin": "河北",
   "email": "WDLXZDSJQ@outlook.com"
  },
  {
   "id": "m19",
   "name": "曹思宇",
+  "nick": "同学12",
   "role": "同学",
   "duty": "",
   "github": "",
@@ -161,6 +181,7 @@
  {
   "id": "m20",
   "name": "李龙一",
+  "nick": "同学13",
   "role": "同学",
   "duty": "",
   "github": "",
@@ -169,14 +190,17 @@
  {
   "id": "m21",
   "name": "韩子硕",
+  "nick": "hanzishuo111",
   "role": "班长",
   "duty": "日常管理 · 通知发布 · 活动组织",
-  "github": "",
-  "origin": "河北"
+  "github": "hanzishuo111",
+  "origin": "河北",
+  "email": "zishuohan@outlook.com"
  },
  {
   "id": "m22",
   "name": "杨兆辉",
+  "nick": "同学14",
   "role": "同学",
   "duty": "",
   "github": "",
@@ -185,6 +209,7 @@
  {
   "id": "m23",
   "name": "黄梓皓",
+  "nick": "同学15",
   "role": "同学",
   "duty": "",
   "github": "",
@@ -193,6 +218,7 @@
  {
   "id": "m24",
   "name": "罗裕熙",
+  "nick": "同学16",
   "role": "同学",
   "duty": "",
   "github": "",
@@ -201,23 +227,27 @@
  {
   "id": "m25",
   "name": "许立扬",
+  "nick": "xuliyang2007",
   "role": "同学",
   "duty": "",
-  "github": "",
-  "origin": "重庆"
+  "github": "xuliyang2007",
+  "origin": "重庆",
+  "email": "xuliyang2007@outlook.com"
  },
  {
   "id": "m26",
   "name": "袁德友",
+  "nick": "yuandeyou_2023",
   "role": "组织委员",
   "duty": "活动组织 · 志愿服务",
-  "github": "",
+  "github": "yuandeyou_2023",
   "origin": "重庆",
   "email": "yuandeyou_2023@outlook.com"
  },
  {
   "id": "m27",
   "name": "朋毛仁欠",
+  "nick": "同学17",
   "role": "同学",
   "duty": "",
   "github": "",
@@ -226,14 +256,17 @@
  {
   "id": "m28",
   "name": "派孜拉·麦麦提艾力",
+  "nick": "同学18",
   "role": "同学",
   "duty": "",
   "github": "",
-  "origin": "新疆"
+  "origin": "新疆",
+  "email": "paizila77@outlook.com"
  },
  {
   "id": "m29",
   "name": "斯拉吉丁·卡哈尔",
+  "nick": "同学19",
   "role": "同学",
   "duty": "",
   "github": "",
@@ -243,6 +276,7 @@
  {
   "id": "m30",
   "name": "神艺菲",
+  "nick": "同学20",
   "role": "团支书",
   "duty": "团建 · 团日活动 · 思想工作",
   "github": "",
@@ -251,14 +285,17 @@
  {
   "id": "m31",
   "name": "赵玥",
+  "nick": "yuezhao200804",
   "role": "同学",
   "duty": "",
-  "github": "",
-  "origin": "山东"
+  "github": "yuezhao200804",
+  "origin": "山东",
+  "email": "yuezhao200804@outlook.com"
  },
  {
   "id": "m32",
   "name": "姚佳玉",
+  "nick": "同学21",
   "role": "心理委员",
   "duty": "心理健康 · 情绪疏导",
   "github": "",
@@ -267,6 +304,7 @@
  {
   "id": "m33",
   "name": "泥沚汐",
+  "nick": "同学22",
   "role": "同学",
   "duty": "",
   "github": "",
@@ -276,23 +314,27 @@
  {
   "id": "m34",
   "name": "栾子诺",
+  "nick": "Luanzinuo",
   "role": "宣传委员",
   "duty": "活动宣传 · 影像归档",
-  "github": "",
+  "github": "Luanzinuo",
   "origin": "河北",
   "email": "Lzn080123@outlook.com"
  },
  {
   "id": "m35",
   "name": "张艺严",
+  "nick": "zhangyiyan2007",
   "role": "学习委员",
   "duty": "学风建设 · 成绩统计 · 竞赛信息",
-  "github": "",
-  "origin": "重庆"
+  "github": "zhangyiyan2007",
+  "origin": "重庆",
+  "email": "Zhangyiyan2007@outlook.com"
  },
  {
   "id": "m36",
   "name": "玛丽娅·莫合塔尔",
+  "nick": "同学23",
   "role": "同学",
   "duty": "",
   "github": "",
@@ -301,6 +343,7 @@
  {
   "id": "m00",
   "name": "陈自旺",
+  "nick": "主讲教师",
   "role": "主讲教师",
   "duty": "水声工程学院 · 班级讲座主讲",
   "github": "",
