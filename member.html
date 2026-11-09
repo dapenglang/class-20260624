@@ -145,8 +145,9 @@
       return;
     }
     document.getElementById('role').textContent = m.role;
-    document.getElementById('name').textContent = m.name;
-    document.title = m.name + ' | 20260624班';
+    var display = m.nick || m.name;
+    document.getElementById('name').textContent = display;
+    document.title = display + ' | 20260624班';
     if (m.duty) {
       var d = document.getElementById('duty');
       d.textContent = m.duty;
