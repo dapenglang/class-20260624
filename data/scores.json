@@ -1,0 +1,31 @@
+{
+  "updated": "2026-11-08",
+  "items": [
+    {
+      "id": "s1",
+      "title": "第四次周测 · 工科数学分析（一）",
+      "course": "工科数学分析（一）",
+      "week": 4,
+      "type": "周测",
+      "date": "2026-11-08",
+      "full": 100,
+      "count": 31,
+      "mean": 62.65,
+      "median": 65,
+      "max": 92,
+      "min": 22,
+      "pass_line": 60,
+      "pass_rate": 67.7,
+      "bins": [
+        { "label": "<40", "count": 4 },
+        { "label": "40-49", "count": 3 },
+        { "label": "50-59", "count": 3 },
+        { "label": "60-69", "count": 9 },
+        { "label": "70-79", "count": 8 },
+        { "label": "80-89", "count": 3 },
+        { "label": "90-100", "count": 1 }
+      ],
+      "note": "为保护同学隐私，仅公布班级整体统计与成绩分布，不展示个人分数。"
+    }
+  ]
+}
