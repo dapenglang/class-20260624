@@ -250,6 +250,27 @@
   figure img{width:100%;display:block;border:1px solid var(--line)}
   figcaption{font-size:12.5px;color:var(--ink-3);margin-top:10px;line-height:1.6}
 
+  /* ---------- scores ---------- */
+  .scores-stats{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    gap:1px;background:var(--line);
+    border:1px solid var(--line);margin:26px 0 30px;
+  }
+  .scores-stats .cell{background:var(--paper);padding:20px 18px;text-align:center}
+  .scores-stats .cell b{
+    font-family:var(--serif);font-size:30px;color:var(--navy);
+    font-weight:700;line-height:1.1;display:block;margin-bottom:6px;
+  }
+  .scores-stats .cell span{font-size:12.5px;color:var(--ink-3);letter-spacing:.04em}
+  .scores-chart{background:#fff;border:1px solid var(--line);padding:26px 24px 20px}
+  .scores-chart svg{width:100%;height:auto;display:block}
+  .scores-chart .bar-label{font-size:12px;fill:var(--ink-2);text-anchor:middle}
+  .scores-chart .bar-val{font-size:12px;fill:var(--ink);font-weight:700;text-anchor:middle}
+  .scores-chart .axis{stroke:var(--line);stroke-width:1}
+  .scores-chart .pass-line{stroke:var(--warm);stroke-width:1.5;stroke-dasharray:5 4}
+  .scores-chart .pass-label{font-size:11px;fill:var(--warm)}
+  .scores-note{margin-top:14px;font-size:12.5px;color:var(--ink-3);line-height:1.7}
+
   /* ---------- honor ---------- */
   .honor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   .honor{
@@ -329,6 +350,7 @@
     .honor-grid{grid-template-columns:1fr}
     .comp{grid-template-columns:1fr}
     .figures{grid-template-columns:1fr}
+    .scores-stats{grid-template-columns:repeat(2,1fr)}
     .activity{padding:28px}
     section{padding:60px 0}
     .sec-sub{display:none}
@@ -405,7 +427,7 @@
     <div class="about-grid">
       <div class="prose">
         <p>
-          20260624 班是哈尔滨工程大学 2026 级本科班级，现有学生 34 人，班主任郎大鹏老师，辅导员刘璟仪老师。
+          20260624 班是哈尔滨工程大学 2026 级本科班级，现有学生 34 人，班主任 dapenglang，辅导员 LJY。
           班级以「勤学、团结、务实、进取」为班风，围绕学风建设、思想引领、文体活动与社会实践四条主线开展班级工作。
         </p>
         <p>
@@ -458,30 +480,45 @@
       <h3>科研创新与跨学科知识学习专题讲座</h3>
       <div class="meta">
         主办：计算机学院《计算思维与问题求解》课程组 ·
-        主讲：陈自旺博士（水声工程学院）、郎大鹏老师 ·
+        主讲：主讲教师（水声工程学院）、dapenglang ·
         参与：20260624 班全体同学
       </div>
       <p>
-        11 月 8 日晚，班级全体同学参加了「科研创新与跨学科知识学习」专题讲座。陈自旺博士以船舶与海洋工程中的
+        11 月 8 日晚，班级全体同学参加了「科研创新与跨学科知识学习」专题讲座。主讲教师以船舶与海洋工程中的
         <strong>船—冰碰撞问题</strong>为例，完整展示了一项研究从提炼科学问题到形成成果的全过程，
         并介绍了如何用 C++ 物理引擎与非光滑离散元方法开展模拟。他主持开发的碰撞求解器，
         已转化为《计算思维与问题求解》课程的综合实验题目。
       </p>
       <p>
-        郎大鹏老师结合自身教学与科研经历，讲解了跨学科知识的学习路径，强调科研创新并非高年级的"专利"，
+        dapenglang 结合自身教学与科研经历，讲解了跨学科知识的学习路径，强调科研创新并非高年级的"专利"，
         大一是完全可以从「把一个问题想清楚、把一段代码写正确」开始建立研究思维的。
         交流环节中，同学们就方向选择、课程与科研的平衡等问题与两位老师展开讨论。
       </p>
       <div class="figures">
         <figure>
-          <img src="assets/lecture.jpg" alt="讲座现场：郎大鹏老师在讲台前讲解" loading="lazy">
-          <figcaption>郎大鹏老师结合教学与科研经历，讲解跨学科知识的学习路径</figcaption>
+          <img src="assets/lecture.jpg" alt="讲座现场：dapenglang 在讲台前讲解" loading="lazy">
+          <figcaption>dapenglang 结合教学与科研经历，讲解跨学科知识的学习路径</figcaption>
         </figure>
         <figure>
-          <img src="assets/group.jpg" alt="讲座结束后，陈自旺博士与 20260624 班同学合影" loading="lazy">
-          <figcaption>讲座结束后，陈自旺博士与 20260624 班同学合影</figcaption>
+          <img src="assets/group.jpg" alt="讲座结束后，主讲教师与 20260624 班同学合影" loading="lazy">
+          <figcaption>讲座结束后，主讲教师与 20260624 班同学合影</figcaption>
         </figure>
       </div>
+    </article>
+
+    <article class="activity" id="activity-scores">
+      <span class="tag">2026 年 11 月 · 班级日常学习</span>
+      <h3>第四次周测 · 工科数学分析（一）</h3>
+      <div class="meta" id="scores-meta">加载中…</div>
+      <p id="scores-intro">
+        本次周测为工科数学分析（一）第四次日常测验，重点考察微积分基础内容，
+        全班 31 人参加。为保护同学隐私，以下仅公布班级整体统计与成绩分布，不展示个人分数。
+      </p>
+      <div id="scores-stats" class="scores-stats"></div>
+      <div id="scores-chart" class="scores-chart">
+        <div class="cloud-loading">正在加载成绩分布…</div>
+      </div>
+      <p class="scores-note" id="scores-note"></p>
     </article>
 
   </div>
@@ -677,14 +714,16 @@
       var fallback = cartoon(m.name);
       var user = String(m.github || '').trim().replace(/^@/, '').replace(/^https?:\/\/(www\.)?github\.com\//i, '').replace(/\/.*$/, '');
 
+      var display = m.nick || m.name;
+
       var a = document.createElement('a');
       a.className = 'ava-link';
       a.href = 'member.html?id=' + encodeURIComponent(m.id);
-      a.title = m.name + ' · ' + m.role + (m.duty ? ' · ' + m.duty : '') + ' · 查看个人主页';
+      a.title = display + ' · ' + m.role + (m.duty ? ' · ' + m.duty : '') + ' · 查看个人主页';
 
       var img = document.createElement('img');
       img.className = 'ava';
-      img.alt = m.name + ' 的头像';
+      img.alt = display + ' 的头像';
       img.decoding = 'async';
       img.src = user ? 'https://github.com/' + encodeURIComponent(user) + '.png?size=200' : fallback;
       img.onerror = function(){ this.onerror = null; this.src = fallback; };
@@ -699,10 +738,10 @@
         nm.title = '打开 ' + user + ' 的 GitHub 主页';
       } else {
         nm = document.createElement('span');
-        nm.title = m.name + ' · 尚未绑定 GitHub';
+        nm.title = display + ' · 尚未绑定 GitHub';
       }
       nm.className = 'nm';
-      nm.textContent = m.name;
+      nm.textContent = display;
 
       a.appendChild(img);
       wrap.appendChild(a);
@@ -873,12 +912,16 @@
     nodes.forEach(function(node){
       var html = esc(node.nodeValue), hit = false;
       people.forEach(function(person){
-        if (html.indexOf(person.name) > -1){
-          hit = true;
-          html = html.split(person.name).join(
-            '<a class="who" href="member.html?id=' + encodeURIComponent(person.id) + '">' + esc(person.name) + '</a>'
-          );
-        }
+        var terms = [];
+        if (person.nick) terms.push(person.nick);
+        if (person.name && person.name !== person.nick) terms.push(person.name);
+        if (!terms.length) return;
+        var re = new RegExp(terms.map(function(t){
+          return t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }).join('|'), 'g');
+        var link = '<a class="who" href="member.html?id=' + encodeURIComponent(person.id) + '">' + esc(person.nick || person.name) + '</a>';
+        var replaced = html.replace(re, link);
+        if (replaced !== html){ hit = true; html = replaced; }
       });
       if (!hit) return;
       var span = document.createElement('span');
@@ -890,13 +933,106 @@
   fetch('data/members.json?v=' + Date.now())
     .then(function(r){ return r.json(); })
     .then(function(list){
-      people = list.filter(function(m){ return m.name; })
-        .map(function(m){ return { name: m.name, id: m.id }; })
-        .sort(function(a, b){ return b.name.length - a.name.length; });
+      people = list.filter(function(m){ return m.nick || m.name; })
+        .map(function(m){ return { nick: m.nick || m.name, name: m.name, id: m.id }; })
+        .sort(function(a, b){ return (b.nick || '').length - (a.nick || '').length; });
       window.linkPeople(document.body);
       setTimeout(function(){ window.linkPeople(document.body); }, 900);
     })
     .catch(function(){});
+})();
+</script>
+
+<script>
+(function(){
+  var meta = document.getElementById('scores-meta');
+  var statsBox = document.getElementById('scores-stats');
+  var chartBox = document.getElementById('scores-chart');
+  var noteBox = document.getElementById('scores-note');
+  if (!meta || !statsBox || !chartBox) return;
+
+  function fmtDate(s){
+    var d = new Date(s);
+    if (isNaN(d.getTime())) return s;
+    return d.getFullYear() + ' 年 ' + (d.getMonth()+1) + ' 月 ' + d.getDate() + ' 日';
+  }
+
+  fetch('data/scores.json?v=' + Date.now())
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var s = (d.items || [])[0];
+      if (!s){ chartBox.innerHTML = '<div class="cloud-loading">暂无成绩数据。</div>'; return; }
+
+      meta.textContent = fmtDate(s.date) + ' · ' + (s.type || '测验') + ' · 参考 ' + s.count + ' 人 · 满分 ' + s.full + ' 分';
+
+      var cells = [
+        { v: s.mean.toFixed(1), k: '平均分' },
+        { v: s.median, k: '中位数' },
+        { v: s.max + ' / ' + s.min, k: '最高 / 最低' },
+        { v: s.pass_rate.toFixed(1) + '%', k: '及格率（≥' + s.pass_line + '）' }
+      ];
+      statsBox.innerHTML = cells.map(function(c){
+        return '<div class="cell"><b>' + c.v + '</b><span>' + c.k + '</span></div>';
+      }).join('');
+
+      /* ---- 分布直方图 ---- */
+      var bins = s.bins || [];
+      var maxCount = 0;
+      bins.forEach(function(b){ if (b.count > maxCount) maxCount = b.count; });
+      maxCount = Math.max(maxCount, 1);
+
+      var W = 680, H = 280;
+      var padL = 44, padR = 24, padT = 28, padB = 44;
+      var plotW = W - padL - padR;
+      var plotH = H - padT - padB;
+      var n = bins.length;
+      var gap = 14;
+      var barW = (plotW - gap * (n - 1)) / n;
+      var yScale = plotH / maxCount;
+
+      /* 及格线位置：60 分在 [0,100] 区间，映射到 x 轴 */
+      var passX = padL + (s.pass_line / s.full) * plotW;
+
+      var parts = [];
+      parts.push('<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="成绩分布直方图">');
+
+      /* 网格线 */
+      for (var g = 0; g <= maxCount; g++){
+        var gy = padT + plotH - g * yScale;
+        parts.push('<line class="axis" x1="' + padL + '" y1="' + gy + '" x2="' + (W - padR) + '" y2="' + gy + '"/>');
+        parts.push('<text class="bar-label" x="' + (padL - 10) + '" y="' + (gy + 4) + '" text-anchor="end">' + g + '</text>');
+      }
+
+      /* 柱子 */
+      bins.forEach(function(b, i){
+        var x = padL + i * (barW + gap);
+        var h = b.count * yScale;
+        var y = padT + plotH - h;
+        /* 颜色：<60 用暖色，>=60 用蓝色 */
+        var isPass = parseInt(b.label, 10) >= 60 || b.label === '90-100' || b.label === '80-89' || b.label === '70-79' || b.label === '60-69';
+        var color = isPass ? '#024D9F' : '#B8572E';
+        parts.push('<rect x="' + x + '" y="' + y + '" width="' + barW + '" height="' + h + '" fill="' + color + '" rx="2">');
+        parts.push('<title>' + b.label + ' 分：' + b.count + ' 人</title></rect>');
+        parts.push('<text class="bar-val" x="' + (x + barW/2) + '" y="' + (y - 8) + '">' + b.count + '</text>');
+        parts.push('<text class="bar-label" x="' + (x + barW/2) + '" y="' + (H - padB + 18) + '">' + b.label + '</text>');
+      });
+
+      /* x 轴 */
+      parts.push('<line class="axis" x1="' + padL + '" y1="' + (padT + plotH) + '" x2="' + (W - padR) + '" y2="' + (padT + plotH) + '"/>');
+      /* y 轴标题 */
+      parts.push('<text class="bar-label" x="' + (padL - 32) + '" y="' + (padT - 10) + '">人数</text>');
+      parts.push('<text class="bar-label" x="' + (W - padR) + '" y="' + (H - 6) + '" text-anchor="end">分数</text>');
+
+      parts.push('</svg>');
+      chartBox.innerHTML = parts.join('');
+
+      if (s.note){ noteBox.textContent = s.note; }
+      if (window.linkPeople) window.linkPeople(document.getElementById('activity-scores'));
+    })
+    .catch(function(){
+      meta.textContent = '';
+      chartBox.innerHTML = '<div class="cloud-loading">成绩数据加载失败，请刷新重试。</div>';
+    });
 })();
 </script>
 
