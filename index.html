@@ -831,7 +831,6 @@
     }).join('');
     if (more){
       more.textContent = '查看全部通知（共 ' + items.length + ' 条） →';
-      if (items.length <= 3) more.style.display = 'none';
     }
     if (window.linkPeople) window.linkPeople(box);
   }).catch(function(){
