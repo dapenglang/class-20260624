@@ -78,10 +78,10 @@
  {
   "id": "m09",
   "name": "张传儒",
-  "nick": "同学04",
+  "nick": "bbmccbbbbmc",
   "role": "同学",
   "duty": "",
-  "github": "",
+  "github": "bbmccbbbbmc",
   "origin": "山东",
   "email": "zhangchuanru101@outlook.com"
  },
@@ -124,10 +124,10 @@
  {
   "id": "m14",
   "name": "曹桂宁",
-  "nick": "同学08",
+  "nick": "sytwozyouxiuxiaoyou",
   "role": "同学",
   "duty": "",
-  "github": "",
+  "github": "sytwozyouxiuxiaoyou",
   "origin": "辽宁",
   "email": "lovesytwozls1@outlook.com"
  },
@@ -181,11 +181,12 @@
  {
   "id": "m20",
   "name": "李龙一",
-  "nick": "同学13",
+  "nick": "baiye2009",
   "role": "同学",
   "duty": "",
-  "github": "",
-  "origin": "河北"
+  "github": "baiye2009",
+  "origin": "河北",
+  "email": "baiye2009@outlook.com"
  },
  {
   "id": "m21",
@@ -247,29 +248,30 @@
  {
   "id": "m27",
   "name": "朋毛仁欠",
-  "nick": "同学17",
+  "nick": "pmrq2026",
   "role": "同学",
   "duty": "",
-  "github": "",
-  "origin": "青海"
+  "github": "pmrq2026",
+  "origin": "青海",
+  "email": "pengmaorenqian2026@outlook.com"
  },
  {
   "id": "m28",
   "name": "派孜拉·麦麦提艾力",
-  "nick": "同学18",
+  "nick": "webdev512-056e89cd",
   "role": "同学",
   "duty": "",
-  "github": "",
+  "github": "webdev512-056e89cd",
   "origin": "新疆",
   "email": "paizila77@outlook.com"
  },
  {
   "id": "m29",
   "name": "斯拉吉丁·卡哈尔",
-  "nick": "同学19",
+  "nick": "luozhihao7777777",
   "role": "同学",
   "duty": "",
-  "github": "",
+  "github": "luozhihao7777777",
   "origin": "新疆",
   "email": "luozhihao7777777@gmail.com"
  },
@@ -295,11 +297,12 @@
  {
   "id": "m32",
   "name": "姚佳玉",
-  "nick": "同学21",
+  "nick": "zhanghao1255",
   "role": "心理委员",
   "duty": "心理健康 · 情绪疏导",
-  "github": "",
-  "origin": "辽宁"
+  "github": "zhanghao1255",
+  "origin": "辽宁",
+  "email": "zhanghao12555@outlook.com"
  },
  {
   "id": "m33",
