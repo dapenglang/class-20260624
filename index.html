@@ -300,6 +300,35 @@
   .scores-chart .pass-label{font-size:11px;fill:var(--warm)}
   .scores-note{margin-top:14px;font-size:12.5px;color:var(--ink-3);line-height:1.7}
 
+  /* ---------- timetable ---------- */
+  .tt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);background:#fff;margin-top:22px}
+  .timetable{width:100%;min-width:760px;border-collapse:collapse;font-size:12.5px}
+  .timetable th,.timetable td{border:1px solid var(--line);padding:9px 10px;vertical-align:top;text-align:left}
+  .timetable thead th{
+    background:#F4F2ED;color:var(--ink-2);font-weight:600;font-size:12px;
+    text-align:center;white-space:nowrap;
+  }
+  .timetable tbody th{
+    background:#FAF9F6;color:var(--ink-2);font-weight:600;font-size:11.5px;
+    text-align:center;white-space:nowrap;width:78px;
+  }
+  .timetable td{color:var(--ink-3)}
+  .timetable .cn{
+    display:block;font-weight:600;color:var(--ink);font-size:12.5px;
+    line-height:1.5;margin-bottom:3px;
+  }
+  .timetable .rm{font-size:11px;color:var(--ink-3);line-height:1.5}
+  .md-src{margin-top:18px}
+  .md-src summary{
+    cursor:pointer;font-size:13px;color:var(--navy);
+    display:inline-block;border-bottom:1px solid rgba(2,77,159,.3);padding-bottom:2px;
+  }
+  .md-src pre{
+    margin-top:14px;background:#F7F6F2;border:1px solid var(--line);
+    padding:16px 18px;overflow-x:auto;font-size:11.5px;line-height:1.65;
+    color:var(--ink-2);white-space:pre;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+
   /* ---------- honor ---------- */
   .honor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   .honor{
@@ -380,6 +409,7 @@
     .comp{grid-template-columns:1fr}
     .figures{grid-template-columns:1fr}
     .scores-stats{grid-template-columns:repeat(2,1fr)}
+    .timetable{min-width:660px}
     .activity{padding:28px}
     section{padding:60px 0}
     .sec-sub{display:none}
@@ -549,6 +579,109 @@
         <div class="cloud-loading">正在加载成绩分布…</div>
       </div>
       <p class="scores-note" id="scores-note"></p>
+    </article>
+
+    <article class="activity" id="activity-timetable">
+      <span class="tag">2026—2027 学年 · 第一学期</span>
+      <h3>大一第一学期课表（第 10 周）</h3>
+      <div class="meta">2026 年 11 月 2 日 — 11 月 8 日 · 第 10 周 · 周四第 11–12 节为计算机实验课</div>
+      <p>
+        本学期共 7 门课程：计算思维与问题求解、工科数学分析 A（一）、线性代数与解析几何、
+        大学英语（一）、思政课、体育（一）、大学生心理健康教育。
+        表中「98 中 / 86 中 / 03 中」等为课程班号与教室编号，可对照教务系统核对。
+      </p>
+      <div class="tt-scroll">
+        <table class="timetable">
+          <thead>
+            <tr>
+              <th>节次</th>
+              <th>周一 11.02</th>
+              <th>周二 11.03</th>
+              <th>周三 11.04</th>
+              <th>周四 11.05</th>
+              <th>周五 11.06</th>
+              <th>周六 11.07</th>
+              <th>周日 11.08</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>第 1–2 节</th>
+              <td style="border-left:3px solid #6B5CA5"><span class="cn">计算思维与问题求解</span><span class="rm">A21B20 · 86 中</span></td>
+              <td>—</td>
+              <td>—</td>
+              <td style="border-left:3px solid #8A6D1F"><span class="cn">大学英语（一）4</span><span class="rm">1#207 · 小</span></td>
+              <td>—</td>
+              <td style="border-left:3px solid #1B7F79"><span class="cn">工科数学分析 A（一）</span><span class="rm">习题课 · 选 03 大</span></td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <th>第 3–4 节</th>
+              <td style="border-left:3px solid #2F7A55"><span class="cn">体育（一）</span><span class="rm">竞技馆</span></td>
+              <td style="border-left:3px solid #1B7F79"><span class="cn">工科数学分析 A（一）2</span><span class="rm">1B2082 · 中</span></td>
+              <td style="border-left:3px solid #B8572E"><span class="cn">思政课 1-12</span><span class="rm">B110 · 98 中</span></td>
+              <td>—</td>
+              <td style="border-left:3px solid #1B7F79"><span class="cn">工科数学分析 A（一）2</span><span class="rm">1B2082 · 中</span></td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <th>第 5 节</th>
+              <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
+            </tr>
+            <tr>
+              <th>第 6–7 节</th>
+              <td style="border-left:3px solid #024D9F"><span class="cn">线性代数与解析几何</span><span class="rm">A21B20 · 79 中</span></td>
+              <td>—</td>
+              <td>—</td>
+              <td style="border-left:3px solid #024D9F"><span class="cn">线性代数与解析几何</span><span class="rm">A21B21 · 03 中</span></td>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <th>第 8–10 节</th>
+              <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
+            </tr>
+            <tr>
+              <th>第 11–12 节</th>
+              <td>—</td>
+              <td>—</td>
+              <td style="border-left:3px solid #A64C6E"><span class="cn">大学生心理健康教育（一）1</span><span class="rm">#01#014 · 中</span></td>
+              <td style="border-left:3px solid #6B5CA5"><span class="cn">计算思维与问题求解</span><span class="rm">A 计算中心 21B · 4150</span></td>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <details class="md-src">
+        <summary>查看 Markdown 源码（可复制到飞书 / Obsidian）</summary>
+<pre># 大一第一学期课表（第 10 周）
+
+&gt; 2026—2027 学年第一学期 · 2026 年 11 月 2 日 — 11 月 8 日
+
+| 节次 | 周一 11.02 | 周二 11.03 | 周三 11.04 | 周四 11.05 | 周五 11.06 | 周六 11.07 | 周日 11.08 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 第 1–2 节 | 计算思维与问题求解<br>A21B20 · 86 中 | — | — | 大学英语（一）4<br>1#207 · 小 | — | 工科数学分析 A（一）<br>习题课 · 选 03 大 | — |
+| 第 3–4 节 | 体育（一）<br>竞技馆 | 工科数学分析 A（一）2<br>1B2082 · 中 | 思政课 1-12<br>B110 · 98 中 | — | 工科数学分析 A（一）2<br>1B2082 · 中 | — | — |
+| 第 5 节 | — | — | — | — | — | — | — |
+| 第 6–7 节 | 线性代数与解析几何<br>A21B20 · 79 中 | — | — | 线性代数与解析几何<br>A21B21 · 03 中 | — | — | — |
+| 第 8–10 节 | — | — | — | — | — | — | — |
+| 第 11–12 节 | — | — | 大学生心理健康教育（一）1<br>#01#014 · 中 | 计算思维与问题求解<br>A 计算中心 21B · 4150 | — | — | — |
+
+## 课程清单
+
+- 计算思维与问题求解（周一 1–2 节、周四 11–12 节）
+- 工科数学分析 A（一）（周二 3–4 节、周五 3–4 节、周六习题课）
+- 线性代数与解析几何（周一 6–7 节、周四 6–7 节）
+- 大学英语（一）（周四 1–2 节）
+- 思政课（周三 3–4 节）
+- 体育（一）（周一 3–4 节 · 竞技馆）
+- 大学生心理健康教育（周三 11–12 节）</pre>
+      </details>
     </article>
 
   </div>
